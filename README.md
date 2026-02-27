@@ -43,6 +43,13 @@ YNAB.
 - Manually matching / unmatching transactions. Again, would love to
   support, but the YNAB API does not allow it
 
+## Screenshots
+Account / transactions screen:
+<img width="1922" height="968" alt="Screenshot 2026-02-27 at 12 10 16 PM" src="https://github.com/user-attachments/assets/b7259334-de9a-40c6-96bd-6d269d29547c" />
+
+Plan screen:
+<img width="1922" height="968" alt="Screenshot 2026-02-27 at 12 10 35 PM" src="https://github.com/user-attachments/assets/314bf59b-41d2-4d09-bd92-c357d56afcb1" />
+
 ## Contributing and AI use
 
 Contributions are very welcome! This project is partially developed with the
