@@ -1,0 +1,5 @@
+# flyctl launch added from .gitignore
+target
+**/config.toml
+**/.claude
+fly.toml

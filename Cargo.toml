@@ -1,0 +1,3 @@
+[workspace]
+resolver = "3"
+members = ["ynab-api","ynat", "ynat-auth"]

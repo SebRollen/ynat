@@ -1,0 +1,54 @@
+[package]
+name = "ynat-auth"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "ynat-auth-server"
+path = "src/main.rs"
+required-features = ["server"]
+
+[features]
+default = ["server"]
+server = [
+    "dep:axum",
+    "dep:tower",
+    "dep:tower-http",
+    "dep:oauth2",
+    "dep:dotenvy",
+    "dep:dashmap",
+    "dep:tracing-subscriber",
+    "dep:rand",
+    "dep:base64",
+    "dep:anyhow",
+    "tokio/full",
+]
+
+[dependencies]
+# Common dependencies (client + server)
+chrono = { version = "0.4", features = ["serde"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "2.0"
+tracing = "0.1"
+
+# Client dependencies
+config = "0.15"
+reqwest = { version = "0.13", features = ["json", "query"] }
+tokio = { version = "1" }
+uuid = { version = "1.0", features = ["v4"] }
+open = "5.0"
+dirs = "6.0"
+
+# Server dependencies (optional, enabled by "server" feature)
+axum = { version = "0.8", features = ["macros"], optional = true }
+tower = { version = "0.5", features = ["timeout", "limit"], optional = true }
+tower-http = { version = "0.6", features = ["cors", "trace", "limit"], optional = true }
+oauth2 = { version = "5.0", features = ["reqwest"], optional = true }
+dotenvy = { version = "0.15", optional = true }
+dashmap = { version = "6.0", optional = true }
+tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt", "json"], optional = true }
+rand = { version = "0.9", optional = true }
+base64 = { version = "0.22", optional = true }
+url = { version = "2.5", optional = true }
+anyhow = { version = "1.0", optional = true }
